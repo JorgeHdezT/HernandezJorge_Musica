@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">La Discográfica</h1>
+    <section class="SeccionesDiscografica">
+
+        <div class="Elemento">
+            <img src="/images/discos.jpg" alt="" />
+            <h2>Albums</h2>
+            <p>Consulta la colección de albums de nuestro catálogo.</p>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Albums" asp-action="Index">
+                <div>Ver Albums</div>
+            </a>
+        </div>
+
+        <div class="Elemento">
+            <img src="/images/artistas.jpg" alt="" />
+            <h2>Artistas</h2>
+            <p>Conoce a los artistas más punteros del panorama musical</p>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Artists" asp-action="Index">
+                <div>Ver Artistas</div>
+            </a>
+        </div>
+
+    </section>
+</div>
