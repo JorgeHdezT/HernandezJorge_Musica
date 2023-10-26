@@ -21,6 +21,18 @@
       "PackagePath": "staticwebassets\\images\\discos.jpg"
     },
     {
+      "Id": "C:\\Users\\Hache\\Desktop\\HernandezJorge_Musica\\wwwroot\\images\\estrella.svg",
+      "PackagePath": "staticwebassets\\images\\estrella.svg"
+    },
+    {
+      "Id": "C:\\Users\\Hache\\Desktop\\HernandezJorge_Musica\\wwwroot\\images\\mediaEstrella.png",
+      "PackagePath": "staticwebassets\\images\\mediaEstrella.png"
+    },
+    {
+      "Id": "C:\\Users\\Hache\\Desktop\\HernandezJorge_Musica\\wwwroot\\images\\mediaEstrella.svg",
+      "PackagePath": "staticwebassets\\images\\mediaEstrella.svg"
+    },
+    {
       "Id": "C:\\Users\\Hache\\Desktop\\HernandezJorge_Musica\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

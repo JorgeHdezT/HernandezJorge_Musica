@@ -65,7 +65,8 @@ namespace HernandezJorge_Musica.Controllers
         // GET: Albums/Create
         public IActionResult Create()
         {
-            ViewData["ArtistId"] = new SelectList(_context.Artists, "ArtistId", "ArtistId");
+            //ViewData["ArtistId"] = new SelectList(_context.Artists, "ArtistId", "ArtistId");
+            ViewBag.ArtistId = new SelectList(_context.Artists, "ArtistId", "Name");
             return View();
         }
 
@@ -76,12 +77,21 @@ namespace HernandezJorge_Musica.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("AlbumId,Title,ArtistId")] Album album)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(album);
+            /*Quito la validación del modelState para que se pueda generar el nuevo album*/
+            //if (ModelState.IsValid)
+            //{
+
+            // Calcula el próximo ID basado en el número de registros existentes en la tabla "Albun"
+            var maxId = _context.Albums.Max(a => (int?)a.AlbumId) ?? 0;
+            var nextId = maxId + 1;
+
+            // Asigna el nuevo ID al artista
+            album.AlbumId = nextId;
+
+            _context.Add(album);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
+            //}
             ViewData["ArtistId"] = new SelectList(_context.Artists, "ArtistId", "ArtistId", album.ArtistId);
             return View(album);
         }
