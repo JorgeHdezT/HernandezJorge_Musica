@@ -50,6 +50,10 @@ namespace HernandezJorge_Musica.Controllers
             var album = await _context.Albums
                 .Include(a => a.Artist)
                 .FirstOrDefaultAsync(m => m.AlbumId == id);
+
+            album.Tracks = _context.Tracks.Include(a => a.Album).Where(o => o.AlbumId == id).ToList();
+            //Album tiene una lista de canciones vacia.
+            // Esa lista va a consultar a la tabla canciones cuando le pase el album siempre que el albumID sea igual que el del details
             if (album == null)
             {
                 return NotFound();

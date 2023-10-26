@@ -20,6 +20,8 @@ public partial class ChinookContext : DbContext
 
     public virtual DbSet<Artist> Artists { get; set; }
 
+    public virtual DbSet<Track> Tracks { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB; Database=Chinook; Trusted_Connection=True");
@@ -47,6 +49,26 @@ public partial class ChinookContext : DbContext
 
             entity.Property(e => e.ArtistId).ValueGeneratedNever();
             entity.Property(e => e.Name).HasMaxLength(120);
+        });
+
+        modelBuilder.Entity<Track>(entity =>
+        {
+            entity.ToTable("Track");
+
+            entity.HasIndex(e => e.AlbumId, "IFK_TrackAlbumId");
+
+            entity.HasIndex(e => e.GenreId, "IFK_TrackGenreId");
+
+            entity.HasIndex(e => e.MediaTypeId, "IFK_TrackMediaTypeId");
+
+            entity.Property(e => e.TrackId).ValueGeneratedNever();
+            entity.Property(e => e.Composer).HasMaxLength(220);
+            entity.Property(e => e.Name).HasMaxLength(200);
+            entity.Property(e => e.UnitPrice).HasColumnType("numeric(10, 2)");
+
+            entity.HasOne(d => d.Album).WithMany(p => p.Tracks)
+                .HasForeignKey(d => d.AlbumId)
+                .HasConstraintName("FK_TrackAlbumId");
         });
 
         OnModelCreatingPartial(modelBuilder);

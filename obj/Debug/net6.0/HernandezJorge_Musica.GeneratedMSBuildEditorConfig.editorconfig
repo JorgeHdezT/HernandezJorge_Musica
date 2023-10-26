@@ -80,6 +80,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Hache/Desktop/HernandezJorge_Musica/Views/Tracks/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhY2tzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hache/Desktop/HernandezJorge_Musica/Views/Tracks/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhY2tzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hache/Desktop/HernandezJorge_Musica/Views/Tracks/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhY2tzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hache/Desktop/HernandezJorge_Musica/Views/Tracks/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhY2tzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hache/Desktop/HernandezJorge_Musica/Views/Tracks/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhY2tzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Hache/Desktop/HernandezJorge_Musica/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

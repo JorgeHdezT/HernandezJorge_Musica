@@ -23,6 +23,13 @@
             @Html.DisplayFor(model => model.Artist.ArtistId)
         </dd>
     </dl>
+
+    <ul>
+        @foreach (var item in Model.Tracks)
+        {
+            <li>@item.Name</li>
+        }
+    </ul>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.AlbumId">Edit</a> |
