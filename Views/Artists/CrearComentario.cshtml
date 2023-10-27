@@ -1,0 +1,46 @@
+﻿@model HernandezJorge_Musica.Models.Artist
+
+@{
+    ViewData["Title"] = "CrearComentario";
+}
+
+<h1>CrearComentarioAsync</h1>
+
+<h4>Artist</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+            
+            <label for="Titulo">Título</label>
+            <input type="text" value="" id="titulo" placeholder="Escribe aquí el título del comentario" />
+
+            <label for="Comentario">Comentario</label>
+            <input type="text" value="" id="Comentario" placeholder="Escribe aquí el comentario" />
+
+            <label for="Comentario">Puntuación</label>
+            <select>
+                <option value="0">0</option>
+                <option value="0.5">0.5</option>
+                <option value="1">1</option>
+                <option value="1.5">1.5</option>
+                <option value="2">2</option>
+                <option value="2.5">2.5</option>
+                <option value="3">3</option>
+                <option value="3.5">3.5</option>
+                <option value="4">4</option>
+                <option value="4.5">4.5</option>
+                <option value="5">5</option>
+
+            </select>
+
+            <br />
+            <a asp-action="Index" asp-route-id="@Model?.ArtistId">
+                <button style="padding: 5px; color: white; background: dodgerblue; border: 0px solid; border-radius: 5px;">Comentar</button>
+            </a>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver a la lista</a>
+</div>
+

@@ -17,6 +17,53 @@
             @Html.DisplayFor(model => model.Name)
         </dd>
     </dl>
+
+    <div style="display: flex; gap: 5px;">
+        <h4>Comentarios</h4>
+        <a asp-action="CrearComentario" asp-route-id="@Model?.ArtistId">
+            <button style="background: green; padding: 5px; border: 0px solid black; color: white; border-radius: 5px;">Crear</button>
+        </a>
+    </div>
+
+    <section style="border: 1px solid gray; padding: 10px;">
+        <table>
+            <tr>
+                <td>
+                    <h4>Título</h4>
+                </td>
+                <td>
+                    @* Algoritmo para mostrar estrellas: *@
+                    @{
+                        decimal Puntuacion = 3.5M;
+                        int PuntuacionTruncada = Convert.ToInt32(Math.Truncate(Puntuacion));
+
+                        <div style="Display: flex; flex-gap: 5px;">
+                            @if (Puntuacion == PuntuacionTruncada)
+                            {
+                                for(int i = 0; i < Puntuacion; i++)
+                                {
+                                    <img src="~/images/estrella.svg" style="width: 25px;">
+                                }
+                            }
+                            else
+                            {
+                                for(int i = 1; i <= PuntuacionTruncada; i++)
+                                {
+                                    <img src="~/images/estrella.svg" style="width: 25px;">
+                                }
+                                <img src="~/images/mediaEstrella.svg" style="width: 25px;">
+                            }
+                        </div>
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Descripción detallada de ejemplo</p>
+                </td>
+            </tr>
+        </table>
+    </section>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.ArtistId">Editar</a> |

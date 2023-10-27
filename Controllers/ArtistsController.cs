@@ -190,5 +190,46 @@ namespace HernandezJorge_Musica.Controllers
             return View(albums);
         }
 
+
+
+        //Get: Crear Comentario
+
+        public async Task<IActionResult> CrearComentarioAsync(int id)
+        {
+            if (id == null || _context.Artists == null)
+            {
+                return NotFound();
+            }
+
+            var artist = await _context.Artists
+                .FirstOrDefaultAsync(m => m.ArtistId == id);
+            if (artist == null)
+            {
+                return NotFound();
+            }
+
+            return View();
+        }
+        //Post: Create Feedback
+
+        //[HttpPost, ActionName("CrearComentario")]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> CrearComentario([Bind("Name")] Artist artist)
+        //{
+        //    //if (ModelState.IsValid)
+        //    //{
+                
+
+        //    //// Recoge el comentario seleccionado
+        //    //// Le asigna la puntuacion y recoge las estrellas.
+
+        //    //    _context.Add(artist);
+        //    //    await _context.SaveChangesAsync();
+        //    //    return RedirectToAction(nameof(Index));
+        //    //}
+
+        //    return View(Details);
+        //}
+
     }
 }
