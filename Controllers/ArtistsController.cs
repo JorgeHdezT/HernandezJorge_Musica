@@ -159,16 +159,18 @@ namespace HernandezJorge_Musica.Controllers
             var artist = await _context.Artists.FindAsync(id);
             if (artist != null)
             {
-                _context.Artists.Remove(artist);
+                var albumDel = _context.Albums.Where(a => a.ArtistId == id); //Guardo los albums con el id del artista
+                _context.Albums.RemoveRange(albumDel); //Ahora borro todos los albums con ese ID de la lista.
+                _context.Artists.Remove(artist); // Y ahora borro el artista, que ya no tiene ningun album asociado y no da error.
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ArtistExists(int id)
         {
-          return (_context.Artists?.Any(e => e.ArtistId == id)).GetValueOrDefault();
+            return (_context.Artists?.Any(e => e.ArtistId == id)).GetValueOrDefault();
         }
 
         // GET: Artists/DiscosArtista
@@ -186,7 +188,7 @@ namespace HernandezJorge_Musica.Controllers
             var albums = await _context.Albums
                 .Where(a => a.ArtistId == artist.ArtistId)
                 .ToListAsync();
-      
+
             return View(albums);
         }
 
@@ -218,7 +220,7 @@ namespace HernandezJorge_Musica.Controllers
         //{
         //    //if (ModelState.IsValid)
         //    //{
-                
+
 
         //    //// Recoge el comentario seleccionado
         //    //// Le asigna la puntuacion y recoge las estrellas.

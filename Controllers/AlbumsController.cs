@@ -22,15 +22,6 @@ namespace HernandezJorge_Musica.Controllers
         // GET: Albums
         public async Task<IActionResult> Index()
         {
-            /*
-                //Debe mostrar los 15 ultimos ordenados descendientemente por ID.
-                //Por ejemplo, si agregamos un nuevo disco, deberá mostrarse ese en primer lugar; seguido de el del ultimo lugar y 13 más.
-                var chinookContext = _context.Albums.Include(a => a.Artist);
-                chinookContext.ToList(); // Convierto las variables a una lista de las mismas.
-                chinookContext.OrderBy(o => o.AlbumId); // Ordeno la lista por ID del album.
-                chinookContext.Reverse(); // Muestro la lista inversamente.
-                return View(chinookContext);    
-            */
 
             // Consulta los 15 discos más recientes, ordenados de forma descendente por AlbumId.
             var albums = _context.Albums.Include(a => a.Artist).OrderByDescending(a => a.AlbumId).Take(15);
@@ -66,7 +57,7 @@ namespace HernandezJorge_Musica.Controllers
         public IActionResult Create()
         {
             //ViewData["ArtistId"] = new SelectList(_context.Artists, "ArtistId", "ArtistId");
-            ViewBag.ArtistId = new SelectList(_context.Artists, "ArtistId", "Name");
+            ViewBag.ArtistId = new SelectList(_context.Artists, "ArtistId", "Name"); // Muestra los nombres de los artistas en lugar de su ID
             return View();
         }
 

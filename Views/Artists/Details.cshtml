@@ -34,24 +34,24 @@
                 <td>
                     @* Algoritmo para mostrar estrellas: *@
                     @{
-                        decimal Puntuacion = 3.5M;
+                        decimal Puntuacion = 2.5M; //El numero de estrellas a mostrar.
                         int PuntuacionTruncada = Convert.ToInt32(Math.Truncate(Puntuacion));
 
                         <div style="Display: flex; flex-gap: 5px;">
-                            @if (Puntuacion == PuntuacionTruncada)
+                            @if (Puntuacion == PuntuacionTruncada) //Si la puntuacion introducida es igual a la truncada...
                             {
                                 for(int i = 0; i < Puntuacion; i++)
                                 {
-                                    <img src="~/images/estrella.svg" style="width: 25px;">
+                                    <img src="~/images/estrella.svg" style="width: 25px;"> //Solo imprime tantas estrellas enteras como input haya.
                                 }
                             }
                             else
                             {
-                                for(int i = 1; i <= PuntuacionTruncada; i++)
+                                for(int i = 1; i <= PuntuacionTruncada; i++) //En caso contrario...
                                 {
-                                    <img src="~/images/estrella.svg" style="width: 25px;">
+                                    <img src="~/images/estrella.svg" style="width: 25px;"> //Imprime todas hasta la truncada...
                                 }
-                                <img src="~/images/mediaEstrella.svg" style="width: 25px;">
+                                <img src="~/images/mediaEstrella.svg" style="width: 25px;"> //E imprime una ultima con la mitad.
                             }
                         </div>
                     }

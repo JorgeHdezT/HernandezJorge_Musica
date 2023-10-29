@@ -1,11 +1,15 @@
 using HernandezJorge_Musica.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<ChinookContext>();
+builder.Services.AddDbContext<ChinookContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DbContext"));
+});
 
 var app = builder.Build();
 

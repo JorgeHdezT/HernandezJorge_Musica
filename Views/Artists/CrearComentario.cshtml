@@ -4,7 +4,7 @@
     ViewData["Title"] = "CrearComentario";
 }
 
-<h1>CrearComentarioAsync</h1>
+<h1>Crear Comentario</h1>
 
 <h4>Artist</h4>
 <hr />
@@ -12,11 +12,12 @@
     <div class="col-md-4">
             
             <label for="Titulo">Título</label>
-            <input type="text" value="" id="titulo" placeholder="Escribe aquí el título del comentario" />
-
+        <input type="text" value="" id="titulo" placeholder="Escribe aquí el título del comentario" min="2" max="100" required />
+        <br />
             <label for="Comentario">Comentario</label>
-            <input type="text" value="" id="Comentario" placeholder="Escribe aquí el comentario" />
+        <input type="text" value="" id="Comentario" placeholder="Escribe aquí el comentario" min="0" max="500" required />
 
+        <br />
             <label for="Comentario">Puntuación</label>
             <select>
                 <option value="0">0</option>
