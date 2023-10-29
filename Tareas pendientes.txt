@@ -1,2 +1,2 @@
-Album -> Detalles -> Debe mostrar las canciones del album.
-Artista -> Detalles -> Debe mostrar la sección de comentarios.
+Album -> Detalles -> Debe mostrar las canciones del album. TERMINADO
+Artista -> Detalles -> Debe mostrar la sección de comentarios. TERMINADO
