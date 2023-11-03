@@ -303,3 +303,4 @@ C:\Users\Hache\Desktop\HernandezJorge_Musica\bin\Debug\net6.0\Microsoft.Web.Infr
 C:\Users\Hache\Desktop\HernandezJorge_Musica\bin\Debug\net6.0\X.PagedList.dll
 C:\Users\Hache\Desktop\HernandezJorge_Musica\bin\Debug\net6.0\X.PagedList.Mvc.dll
 C:\Users\Hache\Desktop\HernandezJorge_Musica\bin\Debug\net6.0\X.PagedList.Web.Common.dll
+C:\Users\Hache\Desktop\HernandezJorge_Musica\bin\Debug\net6.0\efpt.config.json

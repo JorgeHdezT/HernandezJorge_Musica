@@ -17,4 +17,6 @@ public partial class Artist
     public string? Name { get; set; }
 
     public virtual ICollection<Album> Albums { get; set; } = new List<Album>();
+
+    public virtual ICollection<Review> Reviews { get; set; } = new List<Review>(); //Se añaden las reviews al artista
 }
